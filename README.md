@@ -19,12 +19,6 @@
 - **Swift**: 5.7 o superior.
 - Dependencias externas: Ninguna (usa frameworks nativos de Apple: SwiftUI, Combine).
 
-## **Instalación**
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/pepecode1/todo-swiftui.git
-
 ## **Screenshots**
 
 ![IMG_5974C56120A3-3](https://github.com/user-attachments/assets/faeef18a-f242-4e0c-ba0e-da6d7083b812)
