@@ -35,10 +35,8 @@ enum AppTheme: String, CaseIterable {
     /// Color de texto.
     var textColor: Color {
         switch self {
-        case .blue:
+        case .blue, .green:
             return .black
-        case .green:
-            return .orange
         case .red:
             return .white
         }

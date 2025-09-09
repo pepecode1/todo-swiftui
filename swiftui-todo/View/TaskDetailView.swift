@@ -13,15 +13,23 @@ struct TaskDetailView: View {
     @EnvironmentObject private var themeManager: ThemeManager
     /// View principal.
     var body: some View {
-        VStack {
-            Text(task.title)
-                .font(.title)
-                .foregroundColor(themeManager.currentTheme.textColor)
-            Text(task.completed ? "Completada" : "Pendiente")
-                .foregroundColor(task.completed ? .green : .red)
-            Spacer()
+        ZStack {
+            themeManager.currentTheme.backgroundColor
+                .ignoresSafeArea()
+            VStack {
+                Text(task.title)
+                    .font(.title)
+                    .foregroundColor(themeManager.currentTheme.textColor)
+                Text(task.completed ? "Completada" : "Pendiente")
+                    .foregroundColor(task.completed ? .green : .red)
+                Spacer()
+            }
         }
-        .background(themeManager.currentTheme.backgroundColor)
         .navigationTitle("Detalles")
+        .background(themeManager.currentTheme.backgroundColor)
     }
+}
+/// Preview.
+#Preview {
+    TaskDetailView(task: Task(id: 0, title: "Preview", userId: 0, completed: true))
 }

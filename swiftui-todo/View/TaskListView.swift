@@ -13,21 +13,27 @@ struct TaskListView: View {
     @EnvironmentObject private var themeManager: ThemeManager
     /// View principal.
     var body: some View {
-        NavigationView {
-            List(viewModel.tasks) { task in
-                NavigationLink(destination: TaskDetailView(task: task)) {
-                    Text(task.title)
-                        .foregroundColor(themeManager.currentTheme.textColor)
+        ZStack {
+            themeManager.currentTheme.backgroundColor
+                .ignoresSafeArea()
+            NavigationView {
+                List(viewModel.tasks) { task in
+                    NavigationLink(destination: TaskDetailView(task: task)) {
+                        Text(task.title)
+                            .foregroundColor(themeManager.currentTheme.textColor)
+                    }
+                }
+                .listStyle(.plain)
+                .navigationTitle("Tareas")
+                .background(themeManager.currentTheme.backgroundColor)
+                .toolbar {
+                    NavigationLink("Añadir", destination: AddTaskView(viewModel: viewModel))
+                }
+                .onAppear {
+                    viewModel.loadTasks()
                 }
             }
-            .navigationTitle("Tareas")
-            .background(themeManager.currentTheme.backgroundColor)
-            .toolbar {
-                NavigationLink("Añadir", destination: AddTaskView(viewModel: viewModel))
-            }
-            .onAppear {
-                viewModel.loadTasks()
-            }
         }
+        .navigationViewStyle(.stack)
     }
 }
