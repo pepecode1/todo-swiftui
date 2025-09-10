@@ -7,7 +7,7 @@
 import Combine
 import Foundation
 /// Servicio para tomar tareas.
-class TaskService {
+final class TaskService: TaskServiceProtocol {
     /// Constate de url para servicio GET.
     private let baseURL = URL(string: "https://jsonplaceholder.typicode.com/todos")!
     /// Función que obtiene tareas de servicio.
@@ -21,7 +21,7 @@ class TaskService {
     /// Función para crear task con POST.
     /// - Parameter task: body de tarea.
     /// - Returns: tarea exitosa o error.
-    func createTask(_ task: Task) -> AnyPublisher<Task, Error> {
+    func addTask(_ task: Task) -> AnyPublisher<Task, Error> {
         var request = URLRequest(url: baseURL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
