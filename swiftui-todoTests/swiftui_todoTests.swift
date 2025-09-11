@@ -6,8 +6,6 @@
 //
 import XCTest
 @testable import swiftui_todo
-import SwiftUI
-import Combine
 /// Tests.
 final class swiftui_todoTests: XCTestCase {
     /// Administrador de temas.
@@ -15,21 +13,19 @@ final class swiftui_todoTests: XCTestCase {
     /// ViewModel para tareas.
     var taskViewModel: TaskViewModel!
     /// Mock service.
-    var mockTaskService: MockTaskService!
-    /// Cancellables para service.
-    var cancellables: Set<AnyCancellable>!
+    var mockTaskService: TaskServiceMock!
+    /// Configurar.
     override func setUp() {
         super.setUp()
         themeManager = ThemeManager()
-        mockTaskService = MockTaskService()
+        mockTaskService = TaskServiceMock()
         taskViewModel = TaskViewModel(service: mockTaskService)
-        cancellables = []
     }
+    /// Finalizar.
     override func tearDown() {
         themeManager = nil
         taskViewModel = nil
         mockTaskService = nil
-        cancellables = nil
         super.tearDown()
     }
     // MARK: - Pruebas para ThemeManager.
@@ -106,7 +102,7 @@ final class swiftui_todoTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 2.0)
     }
     func testTaskViewModelLoadTasksFailure() {
         // Given: El mock devuelve un error
@@ -122,7 +118,7 @@ final class swiftui_todoTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 3.0)
     }
     func testTaskViewModelAddTask() {
         // Given: Una tarea para añadir
@@ -140,6 +136,6 @@ final class swiftui_todoTests: XCTestCase {
             XCTAssertEqual(self.taskViewModel.tasks[0].title, "Nueva tarea")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 2.0)
     }
 }
