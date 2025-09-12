@@ -19,7 +19,7 @@ final class swiftui_todoTests: XCTestCase {
         super.setUp()
         themeManager = ThemeManager()
         mockTaskService = TaskServiceMock()
-        taskViewModel = TaskViewModel(service: mockTaskService)
+        taskViewModel = TaskViewModel()
     }
     /// Finalizar.
     override func tearDown() {

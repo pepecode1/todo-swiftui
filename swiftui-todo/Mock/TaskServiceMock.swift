@@ -23,6 +23,7 @@ final class TaskServiceMock: TaskServiceProtocol {
             .eraseToAnyPublisher()
     }
     func addTask(_ task: Task) -> AnyPublisher<Task, Error> {
+        tasksToReturn.append(task)
         if shouldThrowError {
             return Fail(error: URLError(.badServerResponse)).eraseToAnyPublisher()
         }

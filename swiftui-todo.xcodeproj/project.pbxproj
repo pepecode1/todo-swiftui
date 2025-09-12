@@ -18,12 +18,20 @@
 			remoteGlobalIDString = B17EDEB72E6B594500064FDF;
 			remoteInfo = "swiftui-todo";
 		};
+		B1A0DF6C2E73523E00E176F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B17EDEB02E6B594500064FDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B17EDEB72E6B594500064FDF;
+			remoteInfo = "swiftui-todo";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B17EDEB82E6B594500064FDF /* swiftui-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19083552E70AB1300D60832 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B190835B2E70AC6700D60832 /* swiftui-todoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-todoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A0DF662E73523E00E176F0 /* swiftui-todoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-todoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +43,11 @@
 		B190835C2E70AC6700D60832 /* swiftui-todoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "swiftui-todoTests";
+			sourceTree = "<group>";
+		};
+		B1A0DF672E73523E00E176F0 /* swiftui-todoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "swiftui-todoUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -54,6 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1A0DF632E73523E00E176F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +83,7 @@
 				B19083552E70AB1300D60832 /* README.md */,
 				B17EDEBA2E6B594500064FDF /* swiftui-todo */,
 				B190835C2E70AC6700D60832 /* swiftui-todoTests */,
+				B1A0DF672E73523E00E176F0 /* swiftui-todoUITests */,
 				B17EDEB92E6B594500064FDF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +93,7 @@
 			children = (
 				B17EDEB82E6B594500064FDF /* swiftui-todo.app */,
 				B190835B2E70AC6700D60832 /* swiftui-todoTests.xctest */,
+				B1A0DF662E73523E00E176F0 /* swiftui-todoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +146,29 @@
 			productReference = B190835B2E70AC6700D60832 /* swiftui-todoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B1A0DF652E73523E00E176F0 /* swiftui-todoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1A0DF702E73523E00E176F0 /* Build configuration list for PBXNativeTarget "swiftui-todoUITests" */;
+			buildPhases = (
+				B1A0DF622E73523E00E176F0 /* Sources */,
+				B1A0DF632E73523E00E176F0 /* Frameworks */,
+				B1A0DF642E73523E00E176F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1A0DF6D2E73523E00E176F0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B1A0DF672E73523E00E176F0 /* swiftui-todoUITests */,
+			);
+			name = "swiftui-todoUITests";
+			packageProductDependencies = (
+			);
+			productName = "swiftui-todoUITests";
+			productReference = B1A0DF662E73523E00E176F0 /* swiftui-todoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +183,10 @@
 						CreatedOnToolsVersion = 16.4;
 					};
 					B190835A2E70AC6700D60832 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B17EDEB72E6B594500064FDF;
+					};
+					B1A0DF652E73523E00E176F0 = {
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = B17EDEB72E6B594500064FDF;
 					};
@@ -159,6 +208,7 @@
 			targets = (
 				B17EDEB72E6B594500064FDF /* swiftui-todo */,
 				B190835A2E70AC6700D60832 /* swiftui-todoTests */,
+				B1A0DF652E73523E00E176F0 /* swiftui-todoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +223,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B19083592E70AC6700D60832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1A0DF642E73523E00E176F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,6 +253,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1A0DF622E73523E00E176F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -203,6 +267,11 @@
 			isa = PBXTargetDependency;
 			target = B17EDEB72E6B594500064FDF /* swiftui-todo */;
 			targetProxy = B190835F2E70AC6700D60832 /* PBXContainerItemProxy */;
+		};
+		B1A0DF6D2E73523E00E176F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B17EDEB72E6B594500064FDF /* swiftui-todo */;
+			targetProxy = B1A0DF6C2E73523E00E176F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -420,6 +489,40 @@
 			};
 			name = Release;
 		};
+		B1A0DF6E2E73523E00E176F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DC99J9NLW6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pepecode.swiftui-todoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swiftui-todo";
+			};
+			name = Debug;
+		};
+		B1A0DF6F2E73523E00E176F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DC99J9NLW6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pepecode.swiftui-todoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swiftui-todo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +549,15 @@
 			buildConfigurations = (
 				B19083622E70AC6700D60832 /* Debug */,
 				B19083632E70AC6700D60832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1A0DF702E73523E00E176F0 /* Build configuration list for PBXNativeTarget "swiftui-todoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A0DF6E2E73523E00E176F0 /* Debug */,
+				B1A0DF6F2E73523E00E176F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

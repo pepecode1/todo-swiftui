@@ -15,6 +15,8 @@ struct AddTaskView: View {
     @State private var description = ""
     /// Acción de dismiss.
     @Environment(\.dismiss) var dismiss
+    /// Presentación de view.
+    @Environment(\.presentationMode) var presentationMode
     /// Administrador de temas.
     @EnvironmentObject private var themeManager: ThemeManager
     /// Vista principal.
@@ -24,16 +26,20 @@ struct AddTaskView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .foregroundColor(themeManager.currentTheme.textColor)
+                .accessibilityIdentifier("titleTextField")
             Button("Guardar") {
-                let newTask = Task(id: 1, title: title, userId: 0, completed: false)
-                viewModel.addTask(newTask)
-                dismiss()
+                if !title.isEmpty {
+                    let newTask = Task(id: viewModel.tasks.count + 1, title: title, userId: getLastId(), completed: false)
+                    viewModel.addTask(newTask)
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .disabled(title.isEmpty)
             .foregroundColor(.white)
             .padding()
             .background(themeManager.currentTheme.primaryColor)
             .cornerRadius(8)
+            .accessibilityIdentifier("saveTaskButton")
             Spacer()
         }
         .background(themeManager.currentTheme.backgroundColor)

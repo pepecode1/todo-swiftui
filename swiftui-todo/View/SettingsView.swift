@@ -14,21 +14,22 @@ struct SettingsView: View {
         ZStack {
             themeManager.currentTheme.backgroundColor
                 .ignoresSafeArea()
-            Form {
-                Section(header: Text("Tema de la App")) {
-                    Picker("Color del Tema", selection: $themeManager.currentTheme) {
-                        ForEach(AppTheme.allCases, id: \.self) { theme in
-                            Text(theme.rawValue.capitalized)
-                                .tag(theme)
-                        }
+            NavigationView {
+                VStack {
+                    Picker("Tema", selection: $themeManager.currentTheme) {
+                        Text("Azul").tag(AppTheme.blue)
+                        Text("Verde").tag(AppTheme.green)
+                        Text("Rojo").tag(AppTheme.red)
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(WheelPickerStyle())
+                    .accessibilityIdentifier("themePicker")
+                    .accessibilityLabel("Selector de temas")
+                    .frame(height: 100) // Asegurar que sea visible
+                    Spacer()
                 }
+                .navigationTitle("Configuración")
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.clear)
+            .navigationViewStyle(.stack)
         }
-        .navigationTitle("Configuración")
-        .navigationViewStyle(.stack)
     }
 }

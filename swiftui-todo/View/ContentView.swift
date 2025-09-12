@@ -18,14 +18,20 @@ struct ContentView: View {
                 TaskListView()
                     .tabItem {
                         Label("Tareas", systemImage: "list.bullet")
+                            .accessibilityIdentifier("tasksTab")
+                            .accessibilityLabel("Pestaña de Tareas")
                     }
                 SettingsView()
                     .tabItem {
                         Label("Configuración", systemImage: "gear")
+                            .accessibilityIdentifier("settingsTab")
+                            .accessibilityLabel("Pestaña de Configuración")
                     }
             }
         }
         .accentColor(themeManager.currentTheme.primaryColor)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("tabView")
     }
 }
 /// Preview.
